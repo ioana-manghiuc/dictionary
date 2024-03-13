@@ -1,0 +1,49 @@
+﻿<Window x:Class="dictionary_.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dictionary_"
+        mc:Ignorable="d"
+        Title="Menu" Height="350" Width="470" FontFamily="./Resources/#Graffiti City" FontSize="50">
+
+    <Window.Resources>
+        <ImageBrush x:Key="BackgroundBrush" ImageSource="Resources/005.jpeg"/>
+        <SolidColorBrush x:Key="ButtonFillColor" Color="#d6ddcf" Opacity="0.47"/>
+        <SolidColorBrush x:Key="FontColor" Color="#330000"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <StaticResource ResourceKey="BackgroundBrush"/>
+        </Grid.Background>
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Administrator Mode" Click="OpenAdministrator" Width="390" Height="70"
+                    BorderThickness="0" Foreground="{StaticResource FontColor}" Background="{StaticResource ButtonFillColor}">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="7" Color="#5a6949"/>
+                </Button.Effect>
+            </Button>
+
+            <Rectangle Width="150" Height="27" Fill="Transparent"/>
+
+            <Button Content="Search" Click="OpenSearch" Width="390" Height="70"
+                    BorderThickness="0" Foreground="{StaticResource FontColor}" Background="{StaticResource ButtonFillColor}">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="7" Color="#5a6949"/>
+                </Button.Effect>
+            </Button>
+
+            <Rectangle Width="150" Height="27" Fill="Transparent"/>
+
+            <Button Content="Guessing Game" Click="OpenGame" Width="390" Height="70"
+                    BorderThickness="0" Foreground="{StaticResource FontColor}" Background="{StaticResource ButtonFillColor}">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="7" Color="#5a6949"/>
+                </Button.Effect>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
+

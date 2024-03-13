@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Words>
+	<Word>
+		<Id>1</Id>
+		<WordValue>Moon</WordValue>
+		<Category>Planets</Category>
+		<Definition>the Earth's only natural satellite, the Moon is the brightest celestial object in the Earth's night sky. </Definition>
+		<ImagePath>Resources/003.jpg</ImagePath>
+	</Word>
+
+	<Word>
+		<Id>2</Id>
+		<WordValue>pancake</WordValue>
+		<Category>Deserts</Category>
+		<Definition>A thin, flat cake of batter fried on both sides in a pan. Typically can be served with sweet or savoury filling.</Definition>
+		<ImagePath>Resources/004.jpg</ImagePath>
+	</Word>
+
+	<Word>
+		<Id>3</Id>
+		<WordValue>cat</WordValue>
+		<Category>Mammals</Category>
+		<Definition>A a small domesticated carnivorous mammal with soft fur, a short snout, and retractable claw.</Definition>
+		<ImagePath>Resources/007.jpg</ImagePath>
+	</Word>
+
+	<Word>
+		<Id>4</Id>
+		<WordValue>leave</WordValue>
+		<Category>Verbs</Category>
+		<Definition>to go away from.</Definition>
+		<ImagePath>Resources/010.jpg</ImagePath>
+	</Word>
+
+	<Word>
+		<Id>5</Id>
+		<WordValue>leaf</WordValue>
+		<Category>Nature</Category>
+		<Definition>A flattened structure of a plant, typically green, that is attached to a stem.</Definition>
+		<ImagePath>Resources/009.jpg</ImagePath>
+	</Word>
+
+
+</Words>

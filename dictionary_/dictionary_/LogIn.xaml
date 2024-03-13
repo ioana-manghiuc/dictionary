@@ -1,0 +1,46 @@
+﻿<Window x:Class="dictionary_.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dictionary_"
+        mc:Ignorable="d"
+        Title="Admin Log In" Height="400" Width="600">
+
+    <Window.Resources>
+        <ImageBrush x:Key="BackgroundBrush" ImageSource="Resources/013.jpg" Opacity="0.6"/>
+        <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
+            <Setter Property="Background" Value="#80c5a0a0" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource BackgroundBrush}">
+        <Grid Name='LoginPanel' Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="1" Grid.Row="1" Content="Email:" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <TextBox Name="EmailText" Grid.Column="3" Grid.Row="1" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <Label Grid.Column="1" Grid.Row="3" Content="Password:" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <PasswordBox Name="PasswordText" Grid.Column="3" Grid.Row="3"   Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Width="100" Height="40" Margin="0,4,0,3" Content="Log in"
+                    Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="5" FontFamily="Georgia" FontSize="21" 
+                    Background="#032340" Foreground="#edeae6" BorderThickness="0" Click="LogInButtonClick">
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

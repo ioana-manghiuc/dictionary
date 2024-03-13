@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Categories>
+	
+	<Category>
+		<Id>1</Id>
+		<CategoryName>Planets</CategoryName>
+	</Category>
+
+	<Category>
+		<Id>2</Id>
+		<CategoryName>Deserts</CategoryName>
+	</Category>
+
+	<Category>
+		<Id>3</Id>
+		<CategoryName>Mammals</CategoryName>
+	</Category>
+
+	<Category>
+		<Id>4</Id>
+		<CategoryName>Accessories</CategoryName>
+	</Category>
+
+	<Category>
+		<Id>5</Id>
+		<CategoryName>Nature</CategoryName>
+	</Category>
+
+	<Category>
+		<Id>6</Id>
+		<CategoryName>Verbs</CategoryName>
+	</Category>
+
+</Categories>

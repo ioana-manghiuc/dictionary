@@ -1,0 +1,53 @@
+﻿<Window x:Class="dictionary_.Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dictionary_"
+        mc:Ignorable="d"
+        Title="Search" Height="450" Width="800">
+    <Window.Resources>
+        <ImageBrush x:Key="BackgroundBrush" ImageSource="Resources/011.jpg" Opacity="0.77"/>
+        <ImageBrush x:Key="ButtonImg" ImageSource="Resources/012.png"/>
+    </Window.Resources>
+
+    <Grid Name="Main" Background="{StaticResource BackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="250" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="65" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="540"/>
+            <ColumnDefinition Width="65"/>
+        </Grid.ColumnDefinitions>
+
+        <ComboBox Name="CategoryComboBox" Grid.Column="1" Grid.Row="1" FontFamily="Georgia" FontSize="17" Height="40" Width="120"
+                    DisplayMemberPath="CategoryName" Background="#80fffef2" Foreground="#3d0202"
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <DockPanel Grid.Row="1" Grid.Column="2">
+            <TextBox Name="SearchBar" DockPanel.Dock="Left" Height="40" Width="490" Background="#80fffef2" Foreground="#3d0202" 
+                     FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <Button Name = "SearchBox" DockPanel.Dock="Right" Height="40" Width="40" Background="{StaticResource ButtonImg}"/>
+        </DockPanel>
+
+        <ListBox x:Name="SuggestionBox" Grid.Row="2" Grid.Column="2" FontFamily="Georgia" FontSize="16"
+                Visibility="Hidden" Width="490" Height="Auto"
+                Background="#80fffef2" BorderBrush="#3d0202" BorderThickness="1" 
+                SelectionChanged="SuggestionBoxUpdate" HorizontalAlignment="Left"/>
+
+        <TextBlock x:Name="WordDetails" Grid.Row="3" Grid.Column="2" Visibility="Hidden" Padding="7" Width="490"
+               FontSize="18" FontFamily="Georgia" Background="#80fffef2" Foreground="#3d0202" TextWrapping="Wrap"
+                   HorizontalAlignment="Left"/>
+
+        <Image x:Name="WordPhoto" Grid.Row="4" Grid.Column="2" Visibility="Hidden"
+           Width="140" Height="140" Margin="0,-160,0,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Administrators>
+	<Admin>
+		<Id>1</Id>
+		<Email>iomanghiuc@admin.dex</Email>
+		<Password>password</Password>
+	</Admin>
+</Administrators>
