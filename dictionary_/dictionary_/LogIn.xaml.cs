@@ -28,6 +28,7 @@ namespace dictionary_
                 Email = EmailText.Text,
                 Password = PasswordText.Password
             };
+
             if(handler.FindAdmin(enteredAdmin) == true)
             {
                 Administrator window = new Administrator();

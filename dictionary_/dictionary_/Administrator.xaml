@@ -71,12 +71,12 @@
                 <Label Grid.Row="3" Grid.Column="1" Content=" Category*:" FontFamily="Georgia" FontSize="17"/>
                 <Label Grid.Row="5" Grid.Column="1" Content=" Definition*:" FontFamily="Georgia" FontSize="17"/>
                 <Label Grid.Row="7" Grid.Column="1" Content=" Path to Image:" FontFamily="Georgia" FontSize="17"/>
-                <TextBox Name="WordText" Grid.Column="2" Grid.Row="1" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+                <TextBox Name="WordText" Grid.Column="2" Grid.Row="1" Margin="5" Background="#fffef2"  FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
                 <ComboBox Name="CategoryComboBox" Grid.Column="2" Grid.Row="3" Margin="5" IsEditable="True" FontFamily="Georgia" FontSize="17"
-                        DisplayMemberPath="CategoryName" Background="AntiqueWhite" VerticalContentAlignment="Center"/>
-                <TextBox Name="DefinitionText" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap"
+                        DisplayMemberPath="CategoryName" Background="#fffef2"  VerticalContentAlignment="Center"/>
+                <TextBox Name="DefinitionText" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Background="#fffef2" 
                          Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
-                <TextBox Name="ImageText" Grid.Column="2" Grid.Row="7" Margin="5" 
+                <TextBox Name="ImageText" Grid.Column="2" Grid.Row="7" Margin="5" Background="#fffef2" 
                          MaxHeight="37" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
 
                 <Button HorizontalAlignment="Right" Width="80" Margin="0,4,0,3" Content="Save"
@@ -103,17 +103,17 @@
 
                 <Label Grid.Row="1" Grid.Column="1" Content="Select a word:" FontFamily="Georgia" FontSize="17"/>
                 <ComboBox Name="AllWordsComboBox" Grid.Column="2" Grid.Row="1" Margin="5" FontFamily="Georgia" FontSize="17"
-                            DisplayMemberPath="WordValue" Background="AntiqueWhite" VerticalContentAlignment="Center"
+                            DisplayMemberPath="WordValue" Background="#fffef2" VerticalContentAlignment="Center"
                             SelectionChanged="WordsSelectionChanged"/>
                 <Label Grid.Row="3" Grid.Column="1" Content="Details:" FontFamily="Georgia" FontSize="17"/>
                 <WrapPanel Name="SelectedWordDetails" Grid.Row="3" Grid.Column="2" Orientation="Vertical" Visibility="Collapsed">
-                    <TextBox Name="CategoryBox" Height="30" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+                    <TextBox Name="CategoryBox" Height="30" Background="#fffef2" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
                     <Rectangle Width="300" Height="15" Fill="Transparent"/>
                     <TextBox Name="Definition" Height="Auto" MinHeight="30" Margin="5" FontFamily="Georgia" FontSize="17" 
-                                 TextWrapping="Wrap"
+                                 TextWrapping="Wrap" Background="#fffef2" 
                                  VerticalContentAlignment="Center"/>
                     <Rectangle Width="300" Height="15" Fill="Transparent"/>
-                    <TextBox Name="ImageJPG" Height="30" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+                    <TextBox Name="ImageJPG" Background="#fffef2"  Height="30" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
                 </WrapPanel>
 
                 <Button HorizontalAlignment="Right" Width="80" Margin="0,4,0,3" Content="Modify"
@@ -144,7 +144,7 @@
                             DisplayMemberPath="WordValue" Background="AntiqueWhite" VerticalContentAlignment="Center"/>
                 <Button HorizontalAlignment="Right" Width="80" Margin="0,4,0,3" Content="Delete"
                         Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" FontFamily="Georgia" FontSize="17" 
-                        Background="#450814" Foreground="#e3d1d4" BorderThickness="0" Click="DeleteButtonClick">
+                        Background="#450814" Foreground="#fffef2" BorderThickness="0" Click="DeleteButtonClick">
                 </Button>
                 
 

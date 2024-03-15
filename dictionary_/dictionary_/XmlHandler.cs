@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,26 +32,6 @@ namespace dictionary_
             categories = GetCategoriesFromXml("Resources/categories.xml");
         }
 
-        private List<Category> GetCategoriesFromXml(string filePath)
-        {
-            try
-            {
-                XDocument doc = XDocument.Load(filePath);
-                return doc.Root.Elements("Category")
-                    .Select(c => new Category
-                    {
-                        Id = int.Parse(c.Element("Id").Value),
-                        CategoryName = c.Element("CategoryName").Value
-                    })
-                    .ToList();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading categories from XML: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return new List<Category>();
-            }
-        }
-
         private List<Word> GetWordsFromXml(string filePath)
         {
             try
@@ -72,6 +53,26 @@ namespace dictionary_
             {
                 MessageBox.Show($"Error loading words from XML: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return new List<Word>();
+            }
+        }
+
+        private List<Category> GetCategoriesFromXml(string filePath)
+        {
+            try
+            {
+                XDocument doc = XDocument.Load(filePath);
+                return doc.Root.Elements("Category")
+                    .Select(c => new Category
+                    {
+                        Id = int.Parse(c.Element("Id").Value),
+                        CategoryName = c.Element("CategoryName").Value
+                    })
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading categories from XML: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return new List<Category>();
             }
         }
 
@@ -201,5 +202,28 @@ namespace dictionary_
                 MessageBox.Show($"Error deleting word from XML: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        public List<Word> WordsToGuess()
+        {
+            List<Word> wordsToGuess = new List<Word>();
+            Random rnd = new Random();
+            int size = 5;
+            if (words.Count <= size)
+            {
+                return words;
+            }
+            while (size > 0)
+            {
+                int index = rnd.Next(words.Count);
+                Word randomWord = words[index];
+                if (!wordsToGuess.Contains(randomWord))
+                {
+                    wordsToGuess.Add(randomWord);
+                    size--; 
+                }
+            }
+            return wordsToGuess;
+        }
+
     }
 }

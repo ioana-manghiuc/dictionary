@@ -7,19 +7,17 @@
         mc:Ignorable="d"
         Title="Guessing Game" Height="450" Width="800">
     <Window.Resources>
-        <ImageBrush x:Key="BackgroundBrush" ImageSource="Resources/014.jpg" Opacity="0.77"/>
+        <ImageBrush x:Key="BackgroundBrush" ImageSource="Resources/016.png" Opacity="0.37"/>
         <ImageBrush x:Key="ButtonImg" ImageSource="Resources/012.png"/>
     </Window.Resources>
 
-    <Grid Background="{StaticResource BackgroundBrush}">
-       
-        
+    <Grid Background="{StaticResource BackgroundBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height = "50"/>
             <RowDefinition Height = "50"/>
-            <RowDefinition Height = "300"/>
+            <RowDefinition Height = "200"/>
             <RowDefinition Height = "50"/>
-
+            <RowDefinition Height = "90"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -29,10 +27,31 @@
             <ColumnDefinition Width="50"/>
         </Grid.ColumnDefinitions>
 
+        
+        <Button Name="StartButton" Grid.Row="1" Grid.Column="1"  Width="170" Margin="5" Background="#450814" 
+              Visibility="Visible" Foreground="#fffef2" Grid.ColumnSpan="2" HorizontalAlignment="Left"
+            FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" Click="GameStart">START GAME</Button>
+
 
         <TextBlock x:Name="ScoreKeeper" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontFamily="Georgia" FontSize="27"/>
-        <!--block to show description OR photo // textbox for entering guess // enter button / key functionality -->
+                   FontFamily="Georgia" FontSize="27" Visibility="Collapsed"/>
+        
+        <TextBlock x:Name="WordDetails" Grid.Row="2" Grid.Column="2" Visibility="Collapsed" Padding="7" Margin="10,5,0,5" Width="490" Height="190"
+       FontSize="18" FontFamily="Georgia"  Background="#80fffef2" Foreground="#3d0202" TextWrapping="Wrap" TextAlignment="Center" 
+           HorizontalAlignment="Left"/>
+        
+        <Image x:Name="WordPhoto" Grid.Row="2" Grid.Column="2" Visibility="Collapsed" Margin="10,5,0,5" Width="170" Height="170"
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        <DockPanel Name ="UserControls" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" Margin="75,0,0,0" Visibility="Collapsed">
+            <TextBox Name="UserGuess" DockPanel.Dock="Left" Width="300" Margin="5" Background="#fffef2" FontFamily="Georgia"
+                     FontSize="21" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center"></TextBox>
+            <Button Name="GuessButton" DockPanel.Dock="Right" Width="70" Margin="5" Background="#450814" Foreground="#fffef2" 
+                    FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" Click="Guess">guess</Button>
+        </DockPanel>
+        
+        <Button Name="RestartButton" Grid.Row="3" Grid.Column="2"  Width="170" Margin="5" Background="#450814" Visibility="Collapsed" Foreground="#fffef2" 
+            FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" Click="RestartGame">RESTART GAME</Button>
 
     </Grid>
 </Window>
