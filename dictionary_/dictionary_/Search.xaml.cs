@@ -103,5 +103,14 @@ namespace dictionary_
                 }
             }
         }
+
+        private void UserGuessKeyEvent(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                e.Handled = true;
+                SearchBox.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            }
+        }
     }
 }

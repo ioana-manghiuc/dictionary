@@ -34,7 +34,7 @@
         
         <DockPanel Grid.Row="1" Grid.Column="2">
             <TextBox Name="SearchBar" DockPanel.Dock="Left" Height="40" Width="490" Background="#80fffef2" Foreground="#3d0202" 
-                     FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+                     FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" KeyDown="UserGuessKeyEvent"/>
             <Button Name = "SearchBox" DockPanel.Dock="Right" Height="40" Width="40" Background="{StaticResource ButtonImg}"/>
         </DockPanel>
 

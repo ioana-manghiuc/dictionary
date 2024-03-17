@@ -45,7 +45,7 @@
         
         <DockPanel Name ="UserControls" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" Margin="75,0,0,0" Visibility="Collapsed">
             <TextBox Name="UserGuess" DockPanel.Dock="Left" Width="300" Margin="5" Background="#fffef2" FontFamily="Georgia"
-                     FontSize="21" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center"></TextBox>
+                     FontSize="21" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" KeyDown="UserGuessKeyEvent"></TextBox>
             <Button Name="GuessButton" DockPanel.Dock="Right" Width="70" Margin="5" Background="#450814" Foreground="#fffef2" 
                     FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" Click="Guess">guess</Button>
         </DockPanel>

@@ -34,10 +34,10 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="1" Grid.Row="1" Content="Email:" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
-            <TextBox Name="EmailText" Grid.Column="3" Grid.Row="1" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <TextBox Name="EmailText" Grid.Column="3" Grid.Row="1" Margin="5" FontFamily="Georgia" FontSize="17" KeyDown="UserGuessKeyEvent" VerticalContentAlignment="Center"/>
             <Label Grid.Column="1" Grid.Row="3" Content="Password:" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
-            <PasswordBox Name="PasswordText" Grid.Column="3" Grid.Row="3"   Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
-            <Button HorizontalAlignment="Right" Width="100" Height="40" Margin="0,4,0,3" Content="Log in"
+            <PasswordBox Name="PasswordText" Grid.Column="3" Grid.Row="3"   Margin="5" FontFamily="Georgia" FontSize="17" KeyDown="UserGuessKeyEvent" VerticalContentAlignment="Center"/>
+            <Button Name="LoginButton" HorizontalAlignment="Right" Width="100" Height="40" Margin="0,4,0,3" Content="Log in"
                     Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="5" FontFamily="Georgia" FontSize="21" 
                     Background="#032340" Foreground="#edeae6" BorderThickness="0" Click="LogInButtonClick">
             </Button>

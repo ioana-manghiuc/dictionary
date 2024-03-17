@@ -105,7 +105,7 @@ namespace dictionary_
                 }
                 else
                 {
-                    MessageBox.Show($"Sorry, it seems you didn't get that right.", "Wrong Guess!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Sorry, it seems you didn't get that right.\nCorrect answer: {word.WordValue}", "Wrong Guess!", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
 
@@ -138,5 +138,15 @@ namespace dictionary_
 
             return tcs.Task;
         }
+
+        private void UserGuessKeyEvent(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                e.Handled = true;
+                GuessButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            }
+        }
+
     }
 }

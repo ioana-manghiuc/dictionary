@@ -22,6 +22,15 @@ namespace dictionary_
             InitializeComponent();
         }
 
+        private void UserGuessKeyEvent(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                e.Handled = true;
+                LoginButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            }
+        }
+
         private void LogInButtonClick(object sender, RoutedEventArgs e)
         {
             Admin enteredAdmin = new Admin {

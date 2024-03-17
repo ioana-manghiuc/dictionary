@@ -142,12 +142,12 @@ namespace dictionary_
         {
             try
             {
-                var selectedWordValue = ((Word)AllWordsComboBox.SelectedItem)?.WordValue;
+                var selectedWordValue = AllWordsComboBox.Text.Trim().ToString();
 
                 if (!string.IsNullOrEmpty(selectedWordValue))
                 {
                     handler.ModifyWordInXml(selectedWordValue,
-                        CategoryBox.Text.Trim(), Definition.Text.Trim(), ImageJPG.Text.Trim(), 
+                        CategoryBox.Text.Trim(), Definition.Text.Trim(), ImageJPG.Text.Trim(),
                         "Resources/words.xml");
 
                     InitializeXmlData();
