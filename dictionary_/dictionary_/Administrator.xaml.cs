@@ -22,6 +22,7 @@ namespace dictionary_
     public partial class Administrator : Window
     {
         private XmlHandler handler = new XmlHandler();
+        int selectedWordId = -1;
         public Administrator()
         {
             InitializeComponent();
@@ -130,10 +131,12 @@ namespace dictionary_
 
                 if (selectedWordDetails != null)
                 {
+                    selectedWordId = selectedWordDetails.Id;
                     CategoryBox.Text = selectedWordDetails.Category;
                     Definition.Text = selectedWordDetails.Definition;
                     ImageJPG.Text = selectedWordDetails.ImagePath;
                     SelectedWordDetails.Visibility = Visibility.Visible;
+                    AllWordsComboBox.IsEditable = true;
                 }
             }
         }
@@ -146,7 +149,7 @@ namespace dictionary_
 
                 if (!string.IsNullOrEmpty(selectedWordValue))
                 {
-                    handler.ModifyWordInXml(selectedWordValue,
+                    handler.ModifyWordInXml(selectedWordId, selectedWordValue,
                         CategoryBox.Text.Trim(), Definition.Text.Trim(), ImageJPG.Text.Trim(),
                         "Resources/words.xml");
 

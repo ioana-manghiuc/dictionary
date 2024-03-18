@@ -102,7 +102,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="1" Grid.Column="1" Content="Select a word:" FontFamily="Georgia" FontSize="17"/>
-                <ComboBox Name="AllWordsComboBox" Grid.Column="2" Grid.Row="1" Margin="5" IsEditable="True" FontFamily="Georgia" FontSize="17"
+                <ComboBox Name="AllWordsComboBox" Grid.Column="2" Grid.Row="1" Margin="5" IsEditable="False" FontFamily="Georgia" FontSize="17"
                             DisplayMemberPath="WordValue" Background="#fffef2" VerticalContentAlignment="Center"
                             SelectionChanged="WordsSelectionChanged"/>
                 <Label Grid.Row="3" Grid.Column="1" Content="Details:" FontFamily="Georgia" FontSize="17"/>

@@ -149,22 +149,24 @@ namespace dictionary_
             }
         }
 
-        public void ModifyWordInXml(string wordValue, string newCategory, string newDefinition, string newImagePath, string filePath)
+        public void ModifyWordInXml(int id, string wordValue, string newCategory, string newDefinition, string newImagePath, string filePath)
         {
             try
             {
                 XDocument doc = XDocument.Load(filePath);
 
                 XElement existingWord = doc.Root.Elements("Word")
-                    .FirstOrDefault(w => w.Element("WordValue").Value == wordValue);
+                    .FirstOrDefault(w => (int)w.Element("Id") == id);
 
                 if (existingWord != null)
                 {
+                    existingWord.Element("WordValue").Value = wordValue;
                     existingWord.Element("Category").Value = newCategory;
                     existingWord.Element("Definition").Value = newDefinition;
                     existingWord.Element("ImagePath").Value = newImagePath;
 
                     doc.Save(filePath);
+                    LoadData();
                 }
                 else
                 {
