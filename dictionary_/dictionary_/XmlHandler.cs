@@ -88,9 +88,14 @@ namespace dictionary_
                 XDocument docCategs = XDocument.Load("Resources/categories.xml");
 
                 string path;
+                Console.WriteLine(newWord.ImagePath);
                 if (newWord.ImagePath == string.Empty)
                 {
                     path = "Resources/000.jpg";
+                }
+                else if(newWord.ImagePath.StartsWith("Resources/"))
+                {
+                    path = newWord.ImagePath;
                 }
                 else
                 {

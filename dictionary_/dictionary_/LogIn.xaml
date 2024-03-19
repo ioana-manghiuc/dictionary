@@ -41,6 +41,52 @@
                     Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="5" FontFamily="Georgia" FontSize="21" 
                     Background="#032340" Foreground="#edeae6" BorderThickness="0" Click="LogInButtonClick">
             </Button>
+            <Button Name="RegisterButton" HorizontalAlignment="Right" Width="100" Height="40" Margin="0,4,0,3" Content="Register"
+                    Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="6" FontFamily="Georgia" FontSize="21" 
+                    Background="#032340" Foreground="#edeae6" BorderThickness="0" Click="RegisterButtonClick">
+            </Button>
         </Grid>
+
+        <Grid Name='RegisterPanel' Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="1" Grid.Row="1" Content="Given Name:" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" Background="#edeae6"/>
+            <TextBox Name="GivenNameText" Grid.Column="3" Grid.Row="1" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <Label Grid.Column="1" Grid.Row="3" Content="Family Name:" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" Background="#edeae6"/>
+            <TextBox Name="FamilyNameText" Grid.Column="3" Grid.Row="3" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <Label Grid.Column="1" Grid.Row="5" Content="Date of birth:" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" Background="#edeae6"/>
+            <!--<TextBox Name="BirthdayText" Grid.Column="3" Grid.Row="5" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>-->
+            <DatePicker Name="BirthdayText" Grid.Column="3" Grid.Row="5" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"
+                        ></DatePicker>
+            <Label Grid.Column="1" Grid.Row="7" Content="Email:" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#edeae6"/>
+            <TextBox Name="EmailTextbox" Grid.Column="3" Grid.Row="7" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <Label Grid.Column="1" Grid.Row="9" Content="Password:" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#edeae6"/>
+            <TextBox Name="PasswordTextbox" Grid.Column="3" Grid.Row="9" Margin="5" FontFamily="Georgia" FontSize="17" VerticalContentAlignment="Center"/>
+            <Button HorizontalAlignment="Right" Width="120" Height="40" Margin="0,19,10,29" Content="Register"
+              Grid.Column="3" Grid.Row="10" FontFamily="Georgia" FontSize="21" 
+              Background="#032340" Foreground="#edeae6" BorderThickness="0" Click="RegisterInXmlClick" Grid.RowSpan="2"/>
+        </Grid>
+        
     </Grid>
 </Window>

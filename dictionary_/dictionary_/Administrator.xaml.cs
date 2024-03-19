@@ -16,6 +16,7 @@ using System.Xml.Linq;
 using System.Xml;
 using dictionary_;
 using System.Xml.Serialization;
+using Microsoft.Win32;
 
 namespace dictionary_
 {
@@ -98,6 +99,40 @@ namespace dictionary_
             return handler.GetWords().Max(w => w.Id) + 1;
         }
 
+        private void SearchImage(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                InitialDirectory = @"D:\",
+                Title = "Browse Image Files",
+                CheckFileExists = true,
+                CheckPathExists = true,
+                Filter = "Image files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png",
+                FilterIndex = 2,
+                RestoreDirectory = true
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string sourceFilePath = openFileDialog.FileName;
+                string destinationFolder = "Resources";
+
+                try
+                {
+                    Directory.CreateDirectory(destinationFolder);
+                    string destinationFileName = System.IO.Path.GetFileName(sourceFilePath);
+                    string destinationFilePath = System.IO.Path.Combine(destinationFolder, destinationFileName);
+                    string destinationFullPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, destinationFilePath);
+                    destinationFullPath = destinationFullPath.Replace("\\", "/");
+                    File.Copy(sourceFilePath, destinationFullPath, true);
+                    ImageText.Text = destinationFilePath.Replace("\\", "/");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error copying image: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
         private void AddWord()
         {
             try

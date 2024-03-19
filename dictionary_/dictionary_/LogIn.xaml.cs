@@ -20,6 +20,15 @@ namespace dictionary_
         public LogIn()
         {
             InitializeComponent();
+            InitializeXmlData();
+        }
+
+        private void InitializeXmlData()
+        {
+            DataContext = new
+            {
+                Admins = handler.GetAdmins()
+            };
         }
 
         private void UserGuessKeyEvent(object sender, KeyEventArgs e)
@@ -33,6 +42,7 @@ namespace dictionary_
 
         private void LogInButtonClick(object sender, RoutedEventArgs e)
         {
+            RegisterPanel.Visibility = Visibility.Collapsed;
             Admin enteredAdmin = new Admin {
                 Email = EmailText.Text,
                 Password = PasswordText.Password
@@ -49,5 +59,55 @@ namespace dictionary_
                 MessageBox.Show($"Error - admin not found", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }         
         }
+
+        private void RegisterButtonClick(object sender, RoutedEventArgs e)
+        {
+            RegisterPanel.Visibility= Visibility.Visible;
+            LoginPanel.Visibility = Visibility.Collapsed;
+        
+        }
+        private int GetNextAdminId()
+        {
+            return handler.GetAdmins().Max(a => a.Id) + 1;
+        }
+
+        public void Register()
+        {
+            try
+            {
+
+                DateTime bd = new DateTime(2005, 12, 31);
+                if (BirthdayText.SelectedDate.Value > bd)
+                {
+                    MessageBox.Show($"Invalid date of birth!\nPlease select before: 31-Jan-2005.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                Admin newAdmin = new Admin
+                {
+                    Id = GetNextAdminId(),
+                    GivenName = GivenNameText.Text,
+                    FamilyName = FamilyNameText.Text,
+                    DateOfBirth = BirthdayText.Text,
+                    Email = EmailTextbox.Text,
+                    Password = PasswordTextbox.Text,
+                };
+                
+                handler.AddAdminToXml(newAdmin, "Resources/admins.xml");
+                InitializeXmlData();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error registering : {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void RegisterInXmlClick(object sender, RoutedEventArgs e)
+        {
+            RegisterPanel.Visibility = Visibility.Collapsed;
+            LoginPanel.Visibility = Visibility.Visible;
+            Register();
+        }
+
     }
 }

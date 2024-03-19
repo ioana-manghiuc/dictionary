@@ -14,6 +14,14 @@ namespace dictionary_
         [XmlElement]
         public int Id { get; set; }
 
+        [XmlElement]
+        public string GivenName { get; set; }
+
+        [XmlElement]
+        public string FamilyName { get; set; }
+
+        [XmlElement]
+        public string DateOfBirth { get; set; }
         public string Email { get; set; }
 
         [XmlElement]
